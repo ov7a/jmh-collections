@@ -1,3 +1,7 @@
+buildscript{
+    ext.jmh_version = '1.19'
+}
+
 plugins {
     id "java"
     id "org.jetbrains.kotlin.jvm" version "1.1.3"
@@ -18,6 +22,9 @@ jmh {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.3"
     compile "org.scala-lang:scala-library:2.12.2"
+    compile "org.openjdk.jmh:jmh-core:$jmh_version"
+    jmh "org.openjdk.jmh:jmh-core:$jmh_version"
+    jmh "org.openjdk.jmh:jmh-generator-annprocess:$jmh_version"
 }
 
 task plot(type:Exec) {
