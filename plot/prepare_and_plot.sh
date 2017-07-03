@@ -1,5 +1,6 @@
 #!/bin/bash
 set -eu
+set -o pipefail
 input="build/reports/jmh/results.csv"
 packages=`ls src/jmh/java/collections`
 output_data_dir='build/plots-data'
