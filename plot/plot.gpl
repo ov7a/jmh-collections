@@ -1,0 +1,19 @@
+# Labels
+set title title
+set ylabel ylabel
+set xlabel 'collection size'
+
+# Ranges
+set autoscale
+set logscale xy
+
+# Input
+set datafile separator comma
+
+# Output
+set terminal png size 640,640 enhanced
+set output output
+set grid
+set key below
+
+plot for [file in data] datapath."/".file using 8:5 with linespoints title file lw 2
