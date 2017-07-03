@@ -26,10 +26,6 @@ package jmh;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
-import org.openjdk.jmh.runner.Runner;
-import org.openjdk.jmh.runner.RunnerException;
-import org.openjdk.jmh.runner.options.Options;
-import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
@@ -38,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Thread)
 public abstract class BenchmarkBase<T, R> {
 
-    @Param({"10", "30", "100", "300", "1000",  "3000", "10000"})
+    @Param({"10", "30", "100", "300", "1000", "3000", "10000", "30000", "100000"})
     protected int collectionSize;
 
     @Setup
