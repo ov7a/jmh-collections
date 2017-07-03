@@ -32,6 +32,12 @@ task plot(type:Exec) {
     commandLine 'plot/prepare_and_plot.sh'
 }
 
-task jmhAndPlot(dependsOn: ['clean', 'jmh', 'plot']){
+task jmhAndPlot{
     group = 'jmh'
+
+    dependsOn 'clean'
+    dependsOn 'jmh'
+    dependsOn 'plot'
+    tasks.findByName('jmh').mustRunAfter clean
+    plot.mustRunAfter tasks.findByName('jmh')
 }
