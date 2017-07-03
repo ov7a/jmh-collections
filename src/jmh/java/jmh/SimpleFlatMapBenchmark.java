@@ -29,7 +29,7 @@ import java.util.List;
 
 public abstract class SimpleFlatMapBenchmark<T> extends BenchmarkBase<T, T> {
     protected int smallCollectionSize() {
-        return collectionSize / 5;
+        return 100;
     }
 
     protected List<Integer> generate(Integer value) {
