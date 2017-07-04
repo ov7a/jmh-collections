@@ -35,7 +35,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class BenchmarkBase<T, R> {
 
     @Param({"10", "30", "100", "300", "1000", "3000", "10000", "30000", "100000"})
-    protected int collectionSize;
+    public int collectionSize;
 
     @Setup
     public abstract void prepare(Blackhole bh);
