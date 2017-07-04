@@ -15,7 +15,7 @@ class ScalaFor extends SimpleFoldBenchmark[Seq[Int]] {
   override def doWork() = {
     var result = initialValue()
     for (value <- someList) {
-      result += doFold(result, value)
+      result = doFold(result, value)
     }
     result
   }
