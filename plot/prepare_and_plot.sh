@@ -16,7 +16,7 @@ do
     echo "plotting for $package"
     output_data_file="${output_data_dir}/${package}.csv"
     output_file="${output_dir}/${package}.png"
-    cat ${input} | grep "$package" | sed "s/\"collections.$package.//" | sed "s/.benchmark\"//" > ${output_data_file}
+    cat ${input} | grep "collections[.]$package[.]" | sed "s/\"collections.$package.//" | sed "s/.benchmark\"//" > ${output_data_file}
 
     chunks_dir="${output_data_dir}/${package}"
     rm -rf ${chunks_dir}
